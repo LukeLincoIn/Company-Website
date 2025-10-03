@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>South Siam Engineering Co., Ltd. — Company Profile</title>
+  <meta name="description" content="South Siam Engineering - Construction and Project Management on Koh Samui, Suratthani." />
+
+  <style>
+    /* Simple, modern responsive CSS */
+    :root{
+      --accent:#0b6a6a;
+      --dark:#0a0a0a;
+      --muted:#666;
+      --bg:#f7f7f8;
+      --card:#fff;
+      --radius:12px;
+      --max-width:1100px;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--dark);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+    }
+    .container{
+      max-width:var(--max-width);
+      margin:32px auto;
+      padding:0 20px;
+    }
+
+    header{
+      display:flex;
+      gap:16px;
+      align-items:center;
+      justify-content:space-between;
+      background:linear-gradient(90deg,var(--card),#f1f6f6);
+      padding:18px 20px;
+      border-radius:14px;
+      box-shadow:0 6px 18px rgba(10,10,10,0.06);
+    }
+    .brand{
+      display:flex;
+      gap:14px;
+      align-items:center;
+    }
+    .logo{
+      width:64px;height:64px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#2d9ca3);
+      display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:18px;
+    }
+    nav a{margin-left:12px;color:var(--accent);text-decoration:none;font-weight:600}
+    nav a:hover{text-decoration:underline}
+
+    .hero{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:18px;
+      margin:24px 0;
+      align-items:center;
+    }
+    .hero-card{
+      background:var(--card);
+      padding:22px;
+      border-radius:12px;
+      box-shadow:0 6px 20px rgba(10,10,10,0.04);
+    }
+    .hero h1{margin:0 0 8px 0;font-size:24px}
+    .hero p.lead{color:var(--muted);margin:0 0 12px 0}
+
+    .grid-2{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:18px;
+    }
+    .card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(10,10,10,0.04)}
+    h2{margin-top:0}
+
+    /* Projects grid */
+    .projects{
+      display:grid;
+      grid-template-columns:repeat(1,1fr);
+      gap:12px;
+    }
+    .project{
+      display:flex;
+      gap:14px;
+      align-items:center;
+    }
+    .project img{width:140px;height:90px;object-fit:cover;border-radius:8px}
+
+    /* Certificates */
+    .cert-grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:12px;
+    }
+    .cert{
+      padding:12px;
+      border-radius:10px;
+      background:linear-gradient(180deg,#fff, #fbfbfc);
+      display:flex;
+      gap:12px;
+      align-items:center;
+    }
+    .cert img{width:100px;height:70px;object-fit:cover;border-radius:6px;cursor:pointer}
+    .caption{font-size:13px;color:var(--muted)}
+
+    /* Contact */
+    .contact-list{list-style:none;padding:0;margin:0}
+    .contact-list li{margin-bottom:8px;color:var(--muted)}
+
+    footer{
+      margin-top:26px;text-align:center;color:var(--muted);font-size:13px;padding:20px 0;
+    }
+
+    /* Responsive */
+    @media (min-width:720px){
+      .hero{grid-template-columns:2fr 1fr}
+      .grid-2{grid-template-columns:2fr 1fr}
+      .projects{grid-template-columns:repeat(2,1fr)}
+      .cert-grid{grid-template-columns:repeat(3,1fr)}
+    }
+
+    /* Modal (simple) */
+    .modal-backdrop{
+      position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,0.6);
+      z-index:40;padding:20px;
+    }
+    .modal{
+      max-width:900px;width:100%;background:#fff;border-radius:10px;padding:12px;
+      box-shadow:0 30px 80px rgba(0,0,0,0.5);
+    }
+    .modal img{max-width:100%;height:auto;border-radius:6px}
+    .close-btn{background:#eee;border:0;padding:8px 10px;border-radius:8px;cursor:pointer;margin-top:8px}
+
+    /* small utility */
+    .muted{color:var(--muted)}
+    .pill{display:inline-block;padding:6px 10px;border-radius:999px;background:#f0f8f8;color:var(--accent);font-weight:600;font-size:13px}
+    .project-meta{font-size:13px;color:var(--muted)}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">SSE</div>
+        <div>
+          <div style="font-weight:800">South Siam Engineering Co., Ltd.</div>
+          <div class="muted" style="font-size:13px">Koh Samui, Suratthani • Est. 2007</div>
+        </div>
+      </div>
+
+      <nav aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#projects">Projects</a>
+        <a href="#certificates">Certificates</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero-card">
+        <h1>Building with Quality & Trust</h1>
+        <p class="lead">We are a civil and building contractor based in Koh Samui, specializing in hotels, resorts, residential complexes, and renovation works across Suratthani and nearby provinces.</p>
+        <p><span class="pill">Registered Civil Engineer</span> <span style="margin-left:8px" class="pill">Project Management</span></p>
+      </div>
+
+      <aside class="card">
+        <h3>Quick Contact</h3>
+        <ul class="contact-list">
+          <li><strong>Address:</strong> 124/26 Mu.2, T. Bophut, Koh Samui, Suratthani 84320</li>
+          <li><strong>Phone:</strong> +66 (0)77 960 559-60</li>
+          <li><strong>Mobile:</strong> 081 893 8491</li>
+          <li><strong>Email:</strong> <a href="mailto:tsse2007@gmail.com">tsse2007@gmail.com</a></li>
+        </ul>
+      </aside>
+    </section>
+
+    <div class="grid-2">
+      <section id="about" class="card">
+        <h2>About Us</h2>
+        <p><strong>South Siam Engineering Co., Ltd.</strong> has been serving Koh Samui and the southern provinces since 2007. We provide civil engineering, construction management, and full-scope building works for hospitality, residential and government projects.</p>
+
+        <h3>Managing Director</h3>
+        <p class="muted">Mr. Teerayuth Chullapak — B.Eng (Civil), Registered Civil Engineer (Reg. No. 10610). Experienced in large hospitality projects and airport-related works.</p>
+      </section>
+
+      <aside id="services" class="card">
+        <h2>Services</h2>
+        <ul>
+          <li>General Contracting & Construction</li>
+          <li>Project Management & Site Supervision</li>
+          <li>Renovations & Refurbishments</li>
+          <li>Structural & Civil Engineering</li>
+          <li>Permit & Building Inspection Support</li>
+        </ul>
+      </aside>
+    </div>
+
+    <section id="projects" class="card" style="margin-top:18px">
+      <h2>Selected Projects</h2>
+      <div class="projects">
+        <!-- Example projects from the PDF - replace images with real photos -->
+        <div class="project">
+          <img src="placeholder-project-avenue.jpg" alt="The Avenue Hotel project photo (placeholder)">
+          <div>
+            <div style="font-weight:700">The Avenue Hotel — Chaweng Beach, Koh Samui</div>
+            <div class="project-meta">Completed Feb 2010 • Budget: 150,000,000.00 Baht</div>
+          </div>
+        </div>
+
+        <div class="project">
+          <img src="placeholder-project-nora.jpg" alt="Nora Buri Resort & Spa photo (placeholder)">
+          <div>
+            <div style="font-weight:700">Nora Buri Resort & Spa (Phase 2)</div>
+            <div class="project-meta">Completed Dec 2010 • Renovation & expansion works</div>
+          </div>
+        </div>
+
+        <div class="project">
+          <img src="placeholder-project-police.jpg" alt="Bophut Police Station photo (placeholder)">
+          <div>
+            <div style="font-weight:700">Bophut Police Station & Flats</div>
+            <div class="project-meta">Completed Jun 2010 • Budget: 39,986,640.44 Baht</div>
+          </div>
+        </div>
+
+        <div class="project">
+          <img src="placeholder-project-garden.jpg" alt="Chaweng Garden Beach Hotel photo (placeholder)">
+          <div>
+            <div style="font-weight:700">Chaweng Garden Beach Hotel</div>
+            <div class="project-meta">Completed Jun 2009 • Budget: 33,000,000.00 Baht</div>
+          </div>
+        </div>
+
+        <!-- Add more projects as needed -->
+      </div>
+    </section>
+
+    <section id="certificates" class="card" style="margin-top:18px">
+      <h2>Certificates & Licenses</h2>
+      <p class="muted">Below are scans of official documents (originals in Thai). Click any image to view larger. English captions explain each document.</p>
+
+      <div class="cert-grid" aria-live="polite">
+        <!-- Replace src with real scanned images of certificates -->
+        <div class="cert">
+          <img src="cert-registered-engineer.jpg" alt="Registered Civil Engineer certificate (Thai)" data-full="cert-registered-engineer-large.jpg">
+          <div>
+            <div style="font-weight:700">Registered Civil Engineer (Reg. No. 10610)</div>
+            <div class="caption">Original certificate in Thai — proof of professional engineer registration.</div>
+          </div>
+        </div>
+
+        <div class="cert">
+          <img src="cert-building-inspector.jpg" alt="Building inspector certificate (Thai)" data-full="cert-building-inspector-large.jpg">
+          <div>
+            <div style="font-weight:700">Registered Building Inspector (No. 1917/2551)</div>
+            <div class="caption">Official inspector credential (Thai). Used for building permit inspections.</div>
+          </div>
+        </div>
+
+        <div class="cert">
+          <img src="cert-company-registration.jpg" alt="Company registration or license (Thai)" data-full="cert-company-registration-large.jpg">
+          <div>
+            <div style="font-weight:700">Company Registration / License</div>
+            <div class="caption">Company registration document (Thai). Shows registered capital and company details.</div>
+          </div>
+        </div>
+
+        <!-- Add more certificate tiles -->
+      </div>
+
+      <p style="margin-top:12px" class="muted">If you need full English translations of certificates for bidding or legal use, consider a certified translator and upload translated PDFs here.</p>
+    </section>
+
+    <section id="contact" class="card" style="margin-top:18px">
+      <h2>Contact Us</h2>
+      <p>Ready to discuss your project? Call or email us — we respond promptly.</p>
+
+      <!-- Simple contact form (no backend) - adapt to your server or form provider later -->
+      <form id="contactForm" onsubmit="event.preventDefault(); alert('Replace form action with your server or use email form service.');" style="display:grid;gap:8px;max-width:600px">
+        <input type="text" name="name" placeholder="Your name" required style="padding:10px;border-radius:8px;border:1px solid #ddd">
+        <input type="email" name="email" placeholder="Your email" required style="padding:10px;border-radius:8px;border:1px solid #ddd">
+        <textarea name="message" rows="5" placeholder="Project details or message" required style="padding:10px;border-radius:8px;border:1px solid #ddd"></textarea>
+        <button type="submit" style="padding:10px 14px;border-radius:10px;background:var(--accent);color:#fff;border:0;font-weight:700;cursor:pointer">Send Message</button>
+      </form>
+
+      <div style="margin-top:12px">
+        <strong>Address:</strong> 124/26 Mu.2, T. Bophut, Koh Samui, Suratthani 84320<br>
+        <strong>Phone:</strong> +66 (0)77 960 559-60 • <strong>Mobile:</strong> 081 893 8491<br>
+        <strong>Email:</strong> <a href="mailto:tsse2007@gmail.com">tsse2007@gmail.com</a>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="year"></span> South Siam Engineering Co., Ltd. — All rights reserved.
+    </footer>
+  </div>
+
+  <!-- Modal for viewing certificate images -->
+  <div class="modal-backdrop" id="modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal" role="document">
+      <div id="modalContent">
+        <img id="modalImg" src="" alt="Certificate enlarged">
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px">
+        <div id="modalCaption" class="muted" style="font-size:13px"></div>
+        <button class="close-btn" id="modalClose">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Fill year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Simple modal logic for certificates
+    const modal = document.getElementById('modal');
+    const modalImg = document.getElementById('modalImg');
+    const modalCaption = document.getElementById('modalCaption');
+    const modalClose = document.getElementById('modalClose');
+
+    document.querySelectorAll('.cert img').forEach(img => {
+      img.addEventListener('click', () => {
+        // If data-full provided, use it; otherwise use the same src
+        const full = img.dataset.full || img.src;
+        modalImg.src = full;
+        modalImg.alt = img.alt || 'Certificate';
+        // caption: try to find sibling text
+        const captionText = img.nextElementSibling && img.nextElementSibling.innerText ? img.nextElementSibling.innerText : '';
+        modalCaption.textContent = captionText;
+        modal.style.display = 'flex';
+        modal.setAttribute('aria-hidden', 'false');
+      });
+    });
+
+    modalClose.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeModal();
+    });
+    function closeModal(){
+      modal.style.display = 'none';
+      modal.setAttribute('aria-hidden', 'true');
+      modalImg.src = '';
+    }
+  </script>
+</body>
+</html>
